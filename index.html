@@ -1208,29 +1208,13 @@
     </div>
   </footer>
 
-  <!-- CONFIGURAÇÃO AUTOMÁTICA DOS LINKS -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const previewButton = document.getElementById("previewButton");
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const purchaseButton = document.getElementById("purchaseButton");
-      const previewButton = document.getElementById("previewButton");
-
-      purchaseButton.href = LINK_AFILIADO;
-      previewButton.href = LINK_PREVIA;
-
-      if (
-        !LINK_AFILIADO ||
-        LINK_AFILIADO === "https://pay.kiwify.com.br/TDAS6Zg?afid=OmhhbG5B"
-      ) {
-        purchaseButton.addEventListener("click", function (event) {
-          event.preventDefault();
-
-          
-          
-        });
-      }
-    });
-  </script>
+    previewButton.href = LINK_PREVIA;
+  });
+</script>
 
 </body>
 </html>
