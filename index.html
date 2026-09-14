@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -13,7 +14,7 @@
       --bg-secondary: #0d1511;
       --card: #111c15;
       --green: #20e879;
-      --green-dark: #13a957;
+      --green-light: #8affb7;
       --text: #f4fff7;
       --muted: #a5b6aa;
       --border: rgba(32, 232, 121, 0.18);
@@ -32,7 +33,11 @@
 
     body {
       background:
-        radial-gradient(circle at top right, rgba(32, 232, 121, 0.12), transparent 35%),
+        radial-gradient(
+          circle at top right,
+          rgba(32, 232, 121, 0.12),
+          transparent 35%
+        ),
         var(--bg);
       color: var(--text);
       line-height: 1.6;
@@ -51,7 +56,7 @@
     header {
       padding: 22px 0;
       border-bottom: 1px solid var(--border);
-      background: rgba(7, 11, 9, 0.85);
+      background: rgba(7, 11, 9, 0.9);
       backdrop-filter: blur(12px);
       position: sticky;
       top: 0;
@@ -75,18 +80,34 @@
       color: var(--green);
     }
 
-    .nav-button {
+    .nav-button,
+    .main-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       background: var(--green);
       color: #061009;
-      padding: 11px 18px;
-      border-radius: 9px;
-      font-weight: 800;
+      border-radius: 10px;
+      font-weight: 900;
       transition: 0.3s;
+      cursor: pointer;
     }
 
-    .nav-button:hover {
-      background: #8affb7;
-      transform: translateY(-2px);
+    .nav-button {
+      padding: 11px 18px;
+    }
+
+    .main-button {
+      padding: 16px 25px;
+      box-shadow: 0 0 28px rgba(32, 232, 121, 0.18);
+    }
+
+    .nav-button:hover,
+    .main-button:hover {
+      background: var(--green-light);
+      transform: translateY(-3px);
+      box-shadow: 0 0 35px rgba(32, 232, 121, 0.3);
     }
 
     .hero {
@@ -119,7 +140,8 @@
       margin-bottom: 20px;
     }
 
-    h1 span {
+    h1 span,
+    .section-heading span {
       color: var(--green);
     }
 
@@ -127,7 +149,7 @@
       color: var(--muted);
       font-size: 18px;
       max-width: 610px;
-      margin-bottom: 28px;
+      margin-bottom: 25px;
     }
 
     .author {
@@ -138,26 +160,6 @@
 
     .author strong {
       color: var(--green);
-    }
-
-    .main-button {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      padding: 16px 25px;
-      border-radius: 10px;
-      background: var(--green);
-      color: #061009;
-      font-weight: 900;
-      box-shadow: 0 0 28px rgba(32, 232, 121, 0.18);
-      transition: 0.3s;
-    }
-
-    .main-button:hover {
-      transform: translateY(-3px);
-      background: #8affb7;
-      box-shadow: 0 0 35px rgba(32, 232, 121, 0.35);
     }
 
     .small-note {
@@ -210,10 +212,6 @@
       font-size: clamp(29px, 4vw, 43px);
       line-height: 1.15;
       margin-bottom: 13px;
-    }
-
-    .section-heading h2 span {
-      color: var(--green);
     }
 
     .section-heading p {
@@ -290,7 +288,11 @@
       border: 1px solid rgba(32, 232, 121, 0.35);
       border-radius: 18px;
       background:
-        linear-gradient(135deg, rgba(32, 232, 121, 0.12), rgba(17, 28, 21, 0.8));
+        linear-gradient(
+          135deg,
+          rgba(32, 232, 121, 0.12),
+          rgba(17, 28, 21, 0.8)
+        );
       text-align: center;
     }
 
@@ -314,9 +316,10 @@
       background: linear-gradient(145deg, #14291b, #0c130e);
       border: 1px solid rgba(32, 232, 121, 0.35);
       border-radius: 22px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
     }
 
-    .offer-card .offer-label {
+    .offer-label {
       color: var(--green);
       font-size: 13px;
       font-weight: 900;
@@ -332,6 +335,10 @@
     .offer-card p {
       color: var(--muted);
       margin-bottom: 24px;
+    }
+
+    .offer-card .main-button {
+      width: 100%;
     }
 
     .guarantee {
@@ -427,19 +434,30 @@
 
 <body>
 
+  <!--
+    COLOQUE SEU LINK DE AFILIADO AQUI.
+    Substitua o texto entre aspas pelo seu link da Kiwify.
+  -->
+
+  <script>
+    const LINK_AFILIADO = "COLE_AQUI_SEU_LINK_DE_AFILIADO";
+  </script>
+
   <header>
     <div class="container navbar">
+
       <div class="logo">
         Pack <span>Achadinhos Virais</span>
       </div>
 
       <a
         class="nav-button"
-        href="https://drive.google.com/drive/folders/1V5vtq_hlPfBxtfsT6tsbyql_R_Bo_CGBN?usp=drive_link"
+        href="COLE_AQUI_SEU_LINK_DE_AFILIADO"
         target="_blank"
         rel="noopener noreferrer">
-        Acessar material
+        Comprar agora
       </a>
+
     </div>
   </header>
 
@@ -449,47 +467,54 @@
       <div class="container hero-grid">
 
         <div>
-          <div class="tag">CONTEÚDO PARA AFILIADOS E LOJAS</div>
+
+          <div class="tag">
+            PACK COMPLETO DE VÍDEOS VIRAIS
+          </div>
 
           <h1>
             Tenha acesso aos
             <span>Achadinhos Virais</span>
-            que ajudam a vender mais.
+            para criar conteúdos incríveis.
           </h1>
 
           <p class="hero-description">
-            Mais de 10 mil vídeos virais prontos para baixar, postar e divulgar
-            seus produtos todos os dias, sem perder tempo procurando conteúdos
-            aleatórios.
+            Mais de 10 mil vídeos virais prontos para baixar, postar e utilizar
+            na divulgação dos seus produtos todos os dias.
           </p>
 
           <p class="author">
-            Criado por <strong>Luana MKT DIGITAL</strong><br>
+            Por <strong>Luana MKT DIGITAL</strong><br>
             Produtora: <strong>@Luu_mayaraa</strong>
           </p>
 
           <a
             class="main-button"
-            href="https://drive.google.com/drive/folders/1V5vtq_hlPfBxtfsT6tsbyql_R_Bo_CGBN?usp=drive_link"
+            href="COLE_AQUI_SEU_LINK_DE_AFILIADO"
             target="_blank"
             rel="noopener noreferrer">
-            Acessar o Pack Agora →
+            Comprar agora →
           </a>
 
           <p class="small-note">
-            Acesso ao material de divulgação através de uma área externa.
+            Acesse a oferta completa e confira todos os detalhes.
           </p>
+
         </div>
 
         <div class="product-card">
+
           <img
             src="https://aws-assets.kiwify.com.br/cdn-cgi/image/fit=scale-down,width=400/DEhyPxJqQns3sog/WhatsApp-Image-2026-06-30-at-20.10.47_d45e48bd6bdc4265ab6fcb6478021eca.jpeg"
             alt="Pack Achadinhos Virais">
 
           <div class="product-card-info">
             <h3>Pack Achadinhos Virais</h3>
-            <p>Conteúdos prontos para baixar, publicar e divulgar.</p>
+            <p>
+              Conteúdos prontos para baixar, postar e utilizar.
+            </p>
           </div>
+
         </div>
 
       </div>
@@ -499,7 +524,11 @@
       <div class="container">
 
         <div class="section-heading">
-          <h2>Por que usar o <span>Pack Achadinhos Virais?</span></h2>
+          <h2>
+            Por que escolher o
+            <span>Pack Achadinhos Virais?</span>
+          </h2>
+
           <p>
             Tenha mais praticidade para criar conteúdos e divulgar produtos
             nas suas redes sociais.
@@ -510,7 +539,9 @@
 
           <div class="feature">
             <div class="feature-icon">🚀</div>
+
             <h3>Mais de 10 mil vídeos</h3>
+
             <p>
               Uma grande biblioteca de vídeos para facilitar sua produção
               diária de conteúdo.
@@ -519,23 +550,27 @@
 
           <div class="feature">
             <div class="feature-icon">⏱️</div>
+
             <h3>Economize tempo</h3>
+
             <p>
-              Pare de procurar vídeos aleatórios e encontre materiais
-              organizados para divulgação.
+              Pare de procurar vídeos aleatórios e encontre conteúdos
+              organizados.
             </p>
           </div>
 
           <div class="feature">
             <div class="feature-icon">📲</div>
+
             <h3>Pronto para postar</h3>
+
             <p>
-              Baixe os conteúdos e utilize nas suas estratégias de divulgação
-              de produtos.
+              Baixe os conteúdos e utilize nas suas estratégias de divulgação.
             </p>
           </div>
 
         </div>
+
       </div>
     </section>
 
@@ -544,9 +579,10 @@
 
         <div class="section-heading">
           <h2>O que você vai encontrar?</h2>
+
           <p>
-            Um material pensado para quem trabalha com afiliados, lojas
-            parceiras e divulgação de produtos.
+            Um conteúdo pensado para quem trabalha com afiliados, produtores
+            e lojas parceiras.
           </p>
         </div>
 
@@ -559,7 +595,7 @@
 
           <div class="content-item">
             <span>✓</span>
-            <p>Acesso vitalício ao material.</p>
+            <p>Acesso vitalício ao conteúdo.</p>
           </div>
 
           <div class="content-item">
@@ -592,50 +628,60 @@
 
         <div class="bonus-box">
           <h3>🎁 Bônus exclusivos</h3>
+
           <p>
-            Além do pack de vídeos, você também recebe bônus exclusivos e
-            3 aulas estratégicas para ajudar na sua criação de conteúdo e
-            divulgação.
+            Receba bônus exclusivos e 3 aulas estratégicas para ajudar
+            na sua criação de conteúdo e divulgação.
           </p>
         </div>
 
       </div>
     </section>
 
-    <section class="offer">
+    <section class="offer" id="comprar">
       <div class="container">
 
         <div class="section-heading">
-          <h2>Comece agora com o <span>Pack Achadinhos Virais</span></h2>
+          <h2>
+            Garanta seu acesso ao
+            <span>Pack Achadinhos Virais</span>
+          </h2>
+
           <p>
-            Acesse o material de divulgação e tenha seus conteúdos organizados
-            em um só lugar.
+            Clique no botão abaixo para conhecer a oferta e realizar sua compra.
           </p>
         </div>
 
         <div class="offer-card">
-          <div class="offer-label">Acesso ao material</div>
 
-          <h3>Pack Achadinhos Virais</h3>
+          <div class="offer-label">
+            Acesso completo
+          </div>
+
+          <h3>
+            Pack Achadinhos Virais
+          </h3>
 
           <p>
-            Clique no botão abaixo para acessar a pasta externa com o material
-            de divulgação.
+            Tenha acesso ao conteúdo completo e aproveite todos os recursos
+            disponíveis no pack.
           </p>
 
           <a
             class="main-button"
-            href="https://drive.google.com/drive/folders/1V5vtq_hlPfBxtfsT6tsbyql_R_Bo_CGBN?usp=drive_link"
+            href="COLE_AQUI_SEU_LINK_DE_AFILIADO"
             target="_blank"
             rel="noopener noreferrer">
-            Acessar material de divulgação →
+            Comprar agora →
           </a>
 
           <div class="guarantee">
+            ✔ Mais de 10 mil vídeos<br>
             ✔ Conteúdos organizados<br>
-            ✔ Vídeos para divulgação<br>
-            ✔ Acesso através de link externo
+            ✔ Bônus exclusivos<br>
+            ✔ Acesso conforme as condições da oferta
           </div>
+
         </div>
 
       </div>
@@ -651,23 +697,32 @@
         <div class="faq">
 
           <details>
-            <summary>Para quem é o Pack Achadinhos Virais?</summary>
+            <summary>
+              Para quem é o Pack Achadinhos Virais?
+            </summary>
+
             <p>
-              Para afiliados, produtores, lojistas e pessoas que precisam de
-              vídeos para divulgar produtos nas redes sociais.
+              Para afiliados, produtores, lojistas e pessoas que precisam
+              de vídeos para criar conteúdos e divulgar produtos.
             </p>
           </details>
 
           <details>
-            <summary>Como acesso o material?</summary>
+            <summary>
+              Como faço para comprar?
+            </summary>
+
             <p>
-              Clique em qualquer botão de acesso nesta página. Você será
-              direcionado para uma pasta externa do Google Drive.
+              Clique em qualquer botão “Comprar agora” para acessar a página
+              de compra e conferir as condições da oferta.
             </p>
           </details>
 
           <details>
-            <summary>O material possui atualizações?</summary>
+            <summary>
+              O material possui atualizações?
+            </summary>
+
             <p>
               Conforme a descrição do produto, o pack possui atualizações
               semanais com novos vídeos.
@@ -675,11 +730,13 @@
           </details>
 
           <details>
-            <summary>Preciso aparecer nos vídeos?</summary>
+            <summary>
+              O que está incluído no pack?
+            </summary>
+
             <p>
-              O material foi desenvolvido para facilitar a divulgação de
-              produtos, podendo ser utilizado de acordo com sua estratégia
-              de conteúdo.
+              Vídeos virais, conteúdos organizados por categorias, links
+              para baixar, bônus exclusivos e 3 aulas estratégicas.
             </p>
           </details>
 
@@ -692,16 +749,35 @@
 
   <footer>
     <div class="container">
+
       <p>
-        © 2026 <strong>Pack Achadinhos Virais</strong> — Luana MKT DIGITAL.
+        © 2026 <strong>Pack Achadinhos Virais</strong> —
+        Luana MKT DIGITAL.
       </p>
 
       <p>
-        Este site é uma página de divulgação. Os materiais são acessados
-        através de uma área externa.
+        Este site é uma página de apresentação do produto.
       </p>
+
     </div>
   </footer>
+
+  <script>
+    /*
+      Este script coloca automaticamente o mesmo link de afiliado
+      em todos os botões da página.
+    */
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const botoesCompra = document.querySelectorAll(
+        'a[href="COLE_AQUI_SEU_LINK_DE_AFILIADO"]'
+      );
+
+      botoesCompra.forEach(function (botao) {
+        botao.href = LINK_AFILIADO;
+      });
+    });
+  </script>
 
 </body>
 </html>

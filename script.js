@@ -1,0 +1,1 @@
+const LINK_AFILIADO = "https://pay.kiwify.com.br/TDAS6Zg?afid=OmhhbG5B";
